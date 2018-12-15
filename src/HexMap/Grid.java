@@ -10,11 +10,13 @@ import java.util.Iterator;
  *         a General Grid is used to keep track of this
  */
 public abstract class Grid {
+	private String SaveName;
 	private int m; // x position
 	private int n; // y position
 	private Point[][] Points;
 
-	public Grid(int m, int n) {
+	public Grid(String name, int m, int n) {
+		this.SaveName = name;
 		this.m = m;
 		this.n = n;
 		this.Points = new Point[m][n];
@@ -30,6 +32,9 @@ public abstract class Grid {
 
 	public int getN() {
 		return this.n;
+	}
+	public String getSaveName() {
+		return this.SaveName;
 	}
 
 	public void ClearGrid() {
